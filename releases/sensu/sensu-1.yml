@@ -1,0 +1,92 @@
+---
+packages:
+- name: erlang
+  version: 5b911554656f91d611e631a5acc0099fc055e56e
+  fingerprint: 5b911554656f91d611e631a5acc0099fc055e56e
+  sha1: 0e6f502db8912ea398101f4d47270fa1f6411ee7
+  dependencies: []
+- name: golang
+  version: 0e84947d2c2122ef936e107ba76a3730760ea5e4
+  fingerprint: 0e84947d2c2122ef936e107ba76a3730760ea5e4
+  sha1: 56673926f6728cb1b470046c8aadb1f238f64cb2
+  dependencies: []
+- name: node
+  version: 874c58275ef954b13c617d9e275d9a9d45da91e5
+  fingerprint: 874c58275ef954b13c617d9e275d9a9d45da91e5
+  sha1: 897801b8d0ac10e5ca99e7d41f2e863cb37941fd
+  dependencies:
+  - python
+- name: python
+  version: 676038cddf6eb9e8d88154dfb84a29be1c5bcec6
+  fingerprint: 676038cddf6eb9e8d88154dfb84a29be1c5bcec6
+  sha1: 9d5e31b5190a9ea84384f2f3295a4503177982ff
+  dependencies: []
+- name: rabbitmq-cluster-migration-tool
+  version: 271213c3b9aa0f434b9ce54c334754fb2c4db8bb
+  fingerprint: 271213c3b9aa0f434b9ce54c334754fb2c4db8bb
+  sha1: a7bd281e508c04f4440289ef768023bc3fe701a5
+  dependencies:
+  - golang
+- name: rabbitmq-server
+  version: fca8d147af3e941874d4f6cee778650acbb8db89
+  fingerprint: fca8d147af3e941874d4f6cee778650acbb8db89
+  sha1: ed2862fbfd7117d75d249d789e8841225b5d50a3
+  dependencies: []
+- name: rabbitmq-upgrade-preparation
+  version: d83242ce2d20c8b4a31f850bf6c9ca53b5d6f66e
+  fingerprint: d83242ce2d20c8b4a31f850bf6c9ca53b5d6f66e
+  sha1: 1d7400482bffe62d87c66932d32fd53570eaca6b
+  dependencies:
+  - golang
+- name: redis-server
+  version: b53d5357ab95a74c9489cd98a024e6ef6047aba0
+  fingerprint: b53d5357ab95a74c9489cd98a024e6ef6047aba0
+  sha1: fd30e0d3c77cfa31d9b65391b8c760f79827a4b6
+  dependencies: []
+- name: sensu
+  version: 782959aab4963638f75f1943ccb50f15b457963c
+  fingerprint: 782959aab4963638f75f1943ccb50f15b457963c
+  sha1: b0a6741baaf8d40fe82e3001e25dd411f4174187
+  dependencies: []
+- name: syslog_aggregator
+  version: ede363fa8a2eb78eef980ef7bba75317d9e49809
+  fingerprint: ede363fa8a2eb78eef980ef7bba75317d9e49809
+  sha1: 54f1c5e5b44a580c9c5f8cc0c1cc41d203d8b6a9
+  dependencies: []
+- name: uchiwa
+  version: e50a82bfc938ff9352c7dd6a80ec6c275d349d10
+  fingerprint: e50a82bfc938ff9352c7dd6a80ec6c275d349d10
+  sha1: 37fe852883f70618c7f9d97cd55bb418f49fc8b1
+  dependencies:
+  - golang
+  - node
+- name: util-linux
+  version: b6ddde2cabdc0aa976e0ea75887f677930561076
+  fingerprint: b6ddde2cabdc0aa976e0ea75887f677930561076
+  sha1: d6e41e32d9a0fae6f4018f2b51ee2a70760a7b58
+  dependencies: []
+jobs:
+- name: rabbitmq-server
+  version: 85c7b62c98a6e3e20131606d0fa6f24b2f30adf4
+  fingerprint: 85c7b62c98a6e3e20131606d0fa6f24b2f30adf4
+  sha1: 27de2e523639006f2428d5a598b2e281c596c82c
+- name: redis
+  version: da4ffa39f9e005da33d9f1107f9a2974359083b6
+  fingerprint: da4ffa39f9e005da33d9f1107f9a2974359083b6
+  sha1: 9a36047e66f675d8e4eaf32c431c7a2c9d46d83c
+- name: sensu
+  version: 4b167b84d424c7c6d08b3d7cef3a7cf939a75775
+  fingerprint: 4b167b84d424c7c6d08b3d7cef3a7cf939a75775
+  sha1: fa192a25f895535e305c971d8a7c368c14e12e11
+- name: uchiwa
+  version: e54a55db7692e8be1558dc6778727a72f4943875
+  fingerprint: e54a55db7692e8be1558dc6778727a72f4943875
+  sha1: 7c1825b8be8bc6bc4cca8f4cac42bbda7b4ed0fa
+license:
+  version: 8664f710d717d4d8b539a35813113cf20786e418
+  fingerprint: 8664f710d717d4d8b539a35813113cf20786e418
+  sha1: d56ee0a21d5ef793eafa910c3febdbe13438712b
+commit_hash: c2a7289f
+uncommitted_changes: true
+name: sensu
+version: '1'

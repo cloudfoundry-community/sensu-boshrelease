@@ -1,1 +1,45 @@
---- {}
+---
+erlang/otp_src_18.1.tar.gz:
+  object_id: 9b364416-910b-4194-9e21-419ced7af1fa
+  sha: 99361cb597548298cb14b104ebafa4e5a40ff442
+  size: 68231709
+golang/go1.6.linux-amd64.tar.gz:
+  object_id: 10d6e19e-bfd1-4fe8-9e56-5d02b5f87f95
+  sha: 01a6a28dbe31a53103b600979bbbbd63a8104456
+  size: 84799480
+node/node-v4.3.1.tar.gz:
+  object_id: 1de3889e-35be-4f46-901e-cd82d3bcfbe2
+  sha: 40e931177911742a854f943eba925b89b800440d
+  size: 22585371
+python/Python-2.7.9.tar.xz:
+  object_id: 61e73741-75b3-41aa-86c6-79ad589d168e
+  sha: 3172f6e957713c2d9fca462cc16068222fd1b9d3
+  size: 12164712
+rabbitmq-server/rabbitmq-server-generic-unix-3.5.7.tar.gz:
+  object_id: 83e461fa-4fd1-47a5-af8e-4ed19dde3d03
+  sha: 9a607ffc85f1eeaa95abf93fe8af5b6dfcc1cecd
+  size: 4222515
+rabbitmq-server/rabbitmq_clusterer-3.5.7.ez:
+  object_id: a2b0e6bc-a2cd-4dfc-8272-a2126097e76e
+  sha: 2df9cd942c8edbd00b10530b8af63c73d49ad153
+  size: 57497
+redis/redis-2.8.3.tar.gz:
+  object_id: d7bcfbeb-f291-4156-b29a-55056039cc67
+  sha: a751371eeed5f5f02965eb34d989c1963dd8d8c7
+  size: 1046106
+ruby-2.2.4/bundler-1.10.6.gem:
+  object_id: fbd8dade-367e-4b24-8064-7ff0e4155bca
+  sha: 55a37fccd1c0cb5542d468e35d3be46dd0667f73
+  size: 251392
+ruby-2.2.4/ruby-2.2.4.tar.gz:
+  object_id: 9cd3b95d-7378-4741-97f6-741f22e2f0b3
+  sha: 818e5e157f76d4912ba3a7c7b4fc5156105e83c3
+  size: 16638151
+ruby-2.2.4/rubygems-2.4.8.tgz:
+  object_id: 374f5389-a4a1-4c08-841a-06359024ec88
+  sha: 0db6b2f1cdd2267fe19f1f875057c2f2ce9f5696
+  size: 447712
+util-linux/util-linux_2.20.1.orig.tar.gz:
+  object_id: c10e4287-b3f3-412c-ad30-1f4bd46508e8
+  sha: d1dcff8d39e1a821cb0efda31a38452d12fd6b52
+  size: 6174190

@@ -1,0 +1,25 @@
+<div class="dropdown" dropdown>
+  <span dropdown-toggle class="action">
+    Actions <i class="fa fa-caret-down"></i>
+  </span>
+  <ul class="dropdown-menu">
+    <li ng-if="refreshFn">
+      <a href="" ng-click="refreshFn($event, data)">
+        <i class="fa fa-refresh fa-fw"></i>
+        {{refreshLegend}}
+      </a>
+    </li>
+    <li ng-if="resolveFn">
+      <a href="" ng-click="resolveFn(data)">
+        <i class="fa fa-times fa-fw"></i>
+        {{resolveLegend}} {{angular.isFunction(silenceFn)}}
+      </a>
+    </li>
+    <li ng-if="silenceFn">
+      <a href="" ng-click="silenceFn($event, data)">
+        <i class="fa fa-volume-up fa-fw"></i>
+        Silence/Unsilence
+      </a>
+    </li>
+  </ul>
+</div>

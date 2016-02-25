@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e -x
+
+CPUS=$(grep -c ^processor /proc/cpuinfo)
+
+tar -xJf python/Python-2.7.9.tar.xz
+
+cd Python-2.7.9
+./configure --prefix=${BOSH_INSTALL_TARGET} --enable-shared
+make -j${CPUS}
+make install

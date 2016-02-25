@@ -1,0 +1,5 @@
+check process uchiwa
+  with pidfile /var/vcap/sys/run/uchiwa/uchiwa.pid
+  start program "/var/vcap/jobs/uchiwa/bin/monit_debugger uchiwa_ctl '/var/vcap/jobs/uchiwa/bin/ctl start'"
+  stop program "/var/vcap/jobs/uchiwa/bin/monit_debugger uchiwa_ctl '/var/vcap/jobs/uchiwa/bin/ctl stop'"
+  group vcap

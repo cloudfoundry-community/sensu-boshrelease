@@ -12,14 +12,25 @@ update:
   update_watch_time: 1000-30000
 
 jobs:
-  - name: just_install_packages
+  - name: sensu
     networks:
       - name: sensu1
+        static_ips: (( static_ips(0) ))
 
   - name: rabbitmq_server
     networks:
       - name: sensu1
-        static_ips: (( static_ips(0,1,2,3) ))
+        static_ips: (( static_ips(1,2,3) ))
+
+  - name: redis
+    networks:
+      - name: sensu1
+        static_ips: (( static_ips(4) ))
+
+  - name: uchiwa
+    networks:
+      - name: sensu1
+        static_ips: (( static_ips(5) ))
 
 compilation:
   cloud_properties:

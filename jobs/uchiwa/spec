@@ -1,0 +1,29 @@
+---
+name: uchiwa
+packages:
+- node
+- uchiwa
+templates:
+  bin/ctl: bin/ctl
+  bin/monit_debugger: bin/monit_debugger
+  config/uchiwa.json.erb: config/uchiwa.json
+  data/properties.sh.erb: data/properties.sh
+  helpers/ctl_setup.sh: helpers/ctl_setup.sh
+  helpers/ctl_utils.sh: helpers/ctl_utils.sh
+
+properties:
+  sensu.api.host:
+    description: "sensu api host"
+  sensu.api.port:
+    description: "sensu api port"
+    default: 4242
+
+  uchiwa.port:
+    description: "uchiwa port"
+    default: 3001
+  uchiwa.user:
+    description: "uchiwa user"
+    default: admin
+  uchiwa.pass:
+    description: "uchiwa pass"
+    default: admin

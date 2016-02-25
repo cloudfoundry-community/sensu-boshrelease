@@ -1,0 +1,31 @@
+@import "variables";
+
+.client .client-info .attributes {
+  padding-bottom: 15px;
+}
+
+.client .key {
+  font-weight: bold;
+}
+
+.client .value {
+  overflow-wrap: break-word;
+  white-space: pre-line;
+}
+
+.client .value img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.client .check-info .title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.client .check-output {
+  text-overflow: ellipsis;
+  overflow : hidden;
+  white-space: nowrap;
+}

@@ -1,0 +1,33 @@
+@import "variables";
+
+.btn {
+  font-family: 'Roboto', sans-serif;
+}
+
+.btn-default {
+  color: #ffffff;
+  background-color: $button-default-background-color;
+}
+
+.btn-default:hover {
+  color: #ffffff;
+  background-color: $button-default-hover-background-color;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  padding: 0 0 0 0;
+  font-size: 15px;
+  border-radius: 50%;
+  outline: none !important;
+  margin-right: 7px;
+  display: inline-block;
+  @include context-colors;
+}
+
+.btn-collection, .btn-collection:hover, .btn-collection:focus, .btn-collection:visited {
+  color: #ffffff;
+  background-color: $quinary-color;
+  border: 0px;
+}

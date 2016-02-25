@@ -1,0 +1,8 @@
+---
+name: node
+
+dependencies:
+  - python
+
+files:
+  - node/node-v4.3.1.tar.gz

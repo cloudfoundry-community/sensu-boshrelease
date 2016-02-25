@@ -1,0 +1,19 @@
+{
+  "rabbitmq": {
+    "host": "<%= p("sensu.rabbitmq.host") %>",
+    "vhost": "/<%= p("sensu.rabbitmq.vhost") %>",
+    "user": "<%= p("sensu.rabbitmq.username") %>",
+    "password": "<%= p("sensu.rabbitmq.password") %>"
+  },
+  "redis": {
+    "host": "<%= p("sensu.redis.host") %>",
+    "port": <%= p("sensu.redis.port") %>,
+    "password": "<%= p("sensu.redis.password") %>"
+
+  },
+  "api": {
+    "host": "<%= spec.networks.send(spec.networks.methods(false).first).ip %>",
+    "bind": "0.0.0.0",
+    "port": <%= p("sensu.api.port") %>
+  }
+}

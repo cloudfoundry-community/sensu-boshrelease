@@ -122,6 +122,17 @@ delete_operator_admin() {
   true
 }
 
+create_vhost_user() {
+  <%
+    name = p('rabbitmq-server.vhost.name')
+    username = p('rabbitmq-server.vhost.username')
+    password = p('rabbitmq-server.vhost.password')
+  %>
+  "${CONTROL}" add_vhost /<%= name %>
+  "${CONTROL}" add_user <%= username %> <%= password %>
+  "${CONTROL}" set_permissions -p /<%= name %> <%= username %> ".*" ".*" ".*"
+}
+
 run_script() {
     local script
     script=$1
@@ -188,6 +199,7 @@ start_rabbitmq () {
                 [ -f $OPERATOR_USERNAME_FILE ] && delete_operator_admin
                 create_operator_admin
                 create_broker_admin
+                create_vhost_user
                 echo "$("${TIMESTAMP}"): Finished starting RabbitMQ" >> "${INIT_LOG_DIR}/startup_stdout.log"
                 echo "SUCCESS" | tee -a "${INIT_LOG_DIR}/startup_stdout.log"
                 ;;

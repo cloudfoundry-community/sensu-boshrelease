@@ -1,0 +1,55 @@
+<ng-include src="partialsPath + '/navbar.html'"></ng-include>
+<ng-include src="partialsPath + '/sidebar.html'"></ng-include>
+<div class="container-fluid info">
+
+  <div class="row-fluid">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+
+        <!--panel-heading-->
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-12">
+              <!--title-->
+              <ng-include src="partialsPath + '/panel/breadcrumb.html'"></ng-include>
+            </div>
+          </div>
+        </div>
+
+        <!--panel-body-->
+        <div class="panel-body">
+          <table class="table table-hover table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th><i class="fa fa-upload" tooltip-placement="top" tooltip-trigger tooltip="Sensu Version"></i></th>
+                <th>Redis</th>
+                <th>Transport</th>
+                <th><i class="fa fa-bullhorn" tooltip-placement="top" tooltip-trigger tooltip="Events"></i></th>
+                <th><i class="fa fa-hdd-o" tooltip-placement="top" tooltip-trigger tooltip="Clients"></i></th>
+                <th><i class="fa fa-check-square" tooltip-placement="top" tooltip-trigger tooltip="Checks"></i></th>
+                <th><i class="fa fa-briefcase" tooltip-placement="top" tooltip-trigger tooltip="Stashes"></i></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="datacenter in datacenters | orderBy:'name'">
+                <td class="main">{{ datacenter.name }}</td>
+                <td>{{ datacenter.info.sensu.version }}</td>
+                <td>
+                  <span ng-if="!datacenter.info.redis.connected">Not</span> Connected
+                </td>
+                <td>
+                  <span ng-if="!datacenter.info.transport.connected">Not</span> Connected
+                </td>
+                <td>{{ datacenter.stats.events }}</td>
+                <td>{{ datacenter.stats.clients }}</td>
+                <td>{{ datacenter.stats.checks }}</td>
+                <td>{{ datacenter.stats.stashes }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

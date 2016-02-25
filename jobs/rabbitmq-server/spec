@@ -31,6 +31,16 @@ properties:
   rabbitmq-server.administrators.management.password:
     description: "RabbitMQ admin password for operator"
 
+  rabbitmq-server.vhost.name:
+    description: "vhost name that is created"
+    default: sensu
+  rabbitmq-server.vhost.username:
+    description: "vhost username that is created"
+    default: sensu
+  rabbitmq-server.vhost.password:
+    description: "vhost secret that is created"
+    default: secret
+
   rabbitmq-server.config:
     description: "RabbitMQ configuration (base64 encoded)"
 

@@ -1,0 +1,10 @@
+---
+name: uchiwa
+
+dependencies:
+  - golang
+  - node
+
+files:
+- uchiwa/**/*
+- bower_components/**/*

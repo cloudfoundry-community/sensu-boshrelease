@@ -1,0 +1,11 @@
+check process sensu-server
+  with pidfile /var/vcap/sys/run/sensu_server/sensu_server.pid
+  start program "/var/vcap/jobs/sensu/bin/monit_debugger sensu_server_ctl '/var/vcap/jobs/sensu/bin/sensu_server_ctl start'"
+  stop program "/var/vcap/jobs/sensu/bin/monit_debugger sensu_server_ctl '/var/vcap/jobs/sensu/bin/sensu_server_ctl stop'"
+  group vcap
+
+check process sensu-api
+  with pidfile /var/vcap/sys/run/sensu_api/sensu_api.pid
+  start program "/var/vcap/jobs/sensu/bin/monit_debugger sensu_api_ctl '/var/vcap/jobs/sensu/bin/sensu_api_ctl start'"
+  stop program "/var/vcap/jobs/sensu/bin/monit_debugger sensu_api_ctl '/var/vcap/jobs/sensu/bin/sensu_api_ctl stop'"
+  group vcap

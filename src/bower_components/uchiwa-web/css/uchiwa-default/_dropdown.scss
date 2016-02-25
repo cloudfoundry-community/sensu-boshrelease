@@ -1,0 +1,43 @@
+@import "variables";
+
+.panel-heading .dropdown {
+  display: inline;
+}
+
+.dropdown {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  background-color: $dropdown-background-color;
+  color: $dropdown-text-color;
+  margin-top: 10px;
+  min-width: 200px;
+}
+
+.dropdown-menu-item {
+  padding: 8px 0 8px 8px;
+  font-weight: 400;
+}
+
+.dropdown-menu > li > a {
+  color: $dropdown-text-color;
+  padding: 7px 20px;
+  border-left: 5px solid transparent;
+}
+
+.dropdown-menu > .selected > a {
+  border-left: 5px solid $quinary-color;
+}
+
+.dropdown-menu > li > a > i.fa {
+  padding-right: 7px;
+}
+
+.dropdown-menu.left {
+  left: -135%;
+}
+
+.show-on-hover:hover > div.dropdown-menu {
+    display: block;
+}

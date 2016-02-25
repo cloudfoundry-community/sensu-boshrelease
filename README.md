@@ -1,5 +1,7 @@
 # BOSH Release for sensu
 
+This deploys [Sensu](https://sensuapp.org/) and all components it needs to run.
+
 ## Usage
 
 To use this bosh release, first upload it to your bosh:

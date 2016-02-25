@@ -1,0 +1,25 @@
+<div class="dropdown" dropdown>
+  <span dropdown-toggle class="action">
+    Hide <i class="fa fa-caret-down"></i>
+  </span>
+  <ul class="dropdown-menu">
+    <li ng-class="{selected: filters.silenced}">
+      <a href="" ng-click="filters.silenced = !filters.silenced">
+        <i class="fa fa-check-square"></i>
+        Silenced Checks
+      </a>
+    </li>
+    <li ng-class="{selected: filters.clientsSilenced}">
+      <a href="" ng-click="filters.clientsSilenced = !filters.clientsSilenced">
+        <i class="fa fa-hdd-o"></i>
+        Silenced Clients
+      </a>
+    </li>
+    <li ng-class="{selected: filters.occurrences}">
+      <a href="" ng-click="filters.occurrences = !filters.occurrences">
+        <i class="fa fa-slack"></i>
+        Below Occurrence Threshold
+      </a>
+    </li>
+  </ul>
+</div>

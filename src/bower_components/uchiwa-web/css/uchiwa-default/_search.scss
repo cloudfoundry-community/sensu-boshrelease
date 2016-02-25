@@ -1,0 +1,58 @@
+@import "variables";
+
+.navbar .uchiwa-search {
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  z-index: 100;
+  background-color: $quinary-color;
+}
+
+.navbar .uchiwa-search .form-control {
+  background-color: $quinary-color;
+  color: $search-text-color;
+  border-radius: 0;
+  border-width: 0;
+  box-shadow: none;
+  border: 0px;
+  padding: 8px 0;
+  font-size: 22px;
+}
+
+.search-results {
+  color: $navbar-text-color;
+  position: absolute;
+  height: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding-left: 0;
+  padding-right: 4px !important;
+  padding-top: 7px;
+}
+
+.search-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+.navbar .uchiwa-search .form-control {
+  @include placeholder {
+    color: $search-text-color;
+  }
+}
+
+.navbar .uchiwa-search .input-group {
+  margin-bottom: 0px;
+}
+
+.navbar .uchiwa-search .input-group-btn .btn {
+  margin-left: 0px;
+  font-size: 20px;
+}
+
+.navbar .uchiwa-search .input-group-btn .btn:hover {
+  border: 0;
+}

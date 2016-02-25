@@ -9,9 +9,18 @@ update:
   serial: false
 
 jobs:
-  - name: just_install_packages
+  - name: uchiwa
     templates:
-    - name: just_install_packages
+    - name: uchiwa
+      release: sensu
+    instances: 1
+    persistent_disk: 0
+    resource_pool: small_z1
+    networks: (( param "please set just_install_package networks" ))
+
+  - name: sensu
+    templates:
+    - name: sensu
       release: sensu
     instances: 1
     persistent_disk: 0
@@ -27,11 +36,40 @@ jobs:
     resource_pool: small_z1
     networks: (( param "please set rabbitmq-server networks" ))
 
+  - name: redis
+    templates:
+    - name: redis
+      release: sensu
+    instances: 1
+    persistent_disk: 4096
+    resource_pool: small_z1
+    networks: (( param "please set rabbitmq-server networks" ))
+
+
 
 networks: (( param "please set networks" ))
 
 properties:
+  sensu:
+    api:
+      host: (( grab jobs.sensu.networks.sensu1.static_ips.[0] ))
+    rabbitmq:
+      host: (( grab jobs.rabbitmq_server.networks.sensu1.static_ips.[0] ))
+      vhost: (( grab properties.rabbitmq-server.vhost.name ))
+      username: (( grab properties.rabbitmq-server.vhost.username ))
+      password: (( grab properties.rabbitmq-server.vhost.password ))
+    redis:
+      host: (( grab jobs.redis.networks.sensu1.static_ips.[0] ))
+      port: (( grab properties.redis.port ))
+      password: (( grab properties.redis.password ))
+  redis:
+    port: 6379
+    password: foobar
   rabbitmq-server:
+    vhost:
+      name: sensu
+      username: sensu
+      password: secret
     plugins:
     - rabbitmq_management
     - rabbitmq_mqtt

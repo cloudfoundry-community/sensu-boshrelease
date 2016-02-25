@@ -1,0 +1,18 @@
+<div class="dropdown" dropdown>
+  <span dropdown-toggle class="action">
+    Subscriptions
+    <i class="fa fa-caret-down"></i>
+  </span>
+  <ul class="dropdown-menu">
+    <li ng-class="{selected: filters.subscription == ''}">
+      <a href="" ng-click="permalink($event, 'subscription', '')">
+        None
+      </a>
+    </li>
+    <li ng-repeat="subscription in subscriptions | orderBy:'toString()'" ng-class="{selected: filters.subscription == subscription}">
+      <a href="" ng-click="permalink($event, 'subscription', subscription)">
+        {{subscription}}
+      </a>
+    </li>
+  </ul>
+</div>

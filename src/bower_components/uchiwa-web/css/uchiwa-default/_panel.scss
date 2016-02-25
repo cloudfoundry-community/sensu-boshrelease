@@ -1,0 +1,90 @@
+@import "variables";
+
+.panel {
+  @include context-colors;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.panel-heading {
+  font-weight: 700;
+}
+
+.panel-body {
+  padding-top: 0;
+  padding-bottom: 15px;
+}
+
+.panel-body .tooltip-inner {
+  max-width: 300px;
+  white-space: pre-wrap;
+  font-style: none;
+}
+
+.panel-breadcrump {
+  margin-bottom: 0;
+}
+
+.panel-default {
+  background-color: $panel-default-background-color;
+  color: $panel-text-color;
+  border: none;
+}
+
+.panel-default .panel-heading {
+  background-color: $body-background-color;
+  color: $panel-text-color;
+  border: none;
+  font-weight: 400;
+}
+
+.panel-default .panel-heading .action {
+  opacity: 0.8;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.panel-default .panel-heading .dropdown {
+  line-height: 30px;
+}
+
+.panel-default .panel-heading span {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.panel-default .panel-heading .form-control {
+  border: 0 solid transparent;
+}
+
+.panel-default .panel-heading .input-group-addon {
+  border: 0 solid transparent;
+}
+
+.panel .panel-icon {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.panel .panel-icon i {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.panel .panel-title {
+  margin-top: 20px;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.panel .subtitle {
+  display: block;
+  line-height: 1.2;
+}
+
+.panel-ok {
+  color: $primary-color;
+  background-color: $info-color;
+}

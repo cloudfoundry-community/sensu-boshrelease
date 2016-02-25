@@ -1,0 +1,70 @@
+<ng-include src="partialsPath + '/navbar.html'"></ng-include>
+<ng-include src="partialsPath + '/sidebar.html'"></ng-include>
+<div class="container-fluid stashes">
+  <div class="row-fluid">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+
+        <!--panel-heading-->
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-12">
+              <!--title-->
+              <ng-include src="partialsPath + '/panel/breadcrumb.html'"></ng-include>
+            </div>
+            <div class="col-xs-12 nopadding">
+              <!--dc-->
+              <ng-include src="partialsPath + '/panel/dc.html'"></ng-include>
+              <!--actions-->
+              <panel-actions data="stashes" resolve-fn="deleteStashes" resolve-legend="Delete" silence-fn="false" ng-if="!user.isReadOnly()"></panel-actions>
+              <!--limit-->
+              <panel-limit data="stashes" filters="filters" permalink="permalink"></panel-limit>
+              <!--search-->
+              <ng-include src="partialsPath + '/panel/search.html'"></ng-include>
+            </div>
+          </div>
+        </div>
+
+        <!--panel-body-->
+        <div class="panel-body">
+          <table class="table table-hover table-condensed">
+            <thead>
+              <tr>
+                <th ng-if="!user.isReadOnly()">
+                  <input type="checkbox" ng-model="selected.all" ng-change="selectAll(filtered, selected)" ng-if="!user.isReadOnly()"></input>
+                </th>
+                <th ng-click="predicate = 'client'; reverse=!reverse">Name <i class="fa fa-sort"></i></th>
+                <th ng-click="predicate = 'check'; reverse=!reverse">Check <i class="fa fa-sort"></i></th>
+                <th ng-click="predicate = 'type'; reverse=!reverse">Type <i class="fa fa-sort"></i></th>
+                <th ng-click="predicate = 'content.reason'; reverse=!reverse">Reason <i class="fa fa-sort"></i></th>
+                <th ng-click="predicate = 'content.source'; reverse=!reverse">Source <i class="fa fa-sort"></i></th>
+                <th ng-click="predicate = 'content.username'; reverse=!reverse">Username <i class="fa fa-sort"></i></th>
+                <th ng-click="predicate = 'dc'; reverse=!reverse"><i class="fa fa-cloud" tooltip-placement="top" tooltip-trigger tooltip="Datacenter"></i> <i class="fa fa-sort"></i></th>
+                <th ng-click="predicate = 'content.timestamp'; reverse=!reverse"><i class='fa fa-clock-o' tooltip-placement="top" tooltip-trigger tooltip="Timestamp"></i> <i class="fa fa-sort"></i></th>
+                <th ng-click="predicate = 'expire'; reverse=!reverse"><i class='fa fa-calendar-o' tooltip-placement="top" tooltip-trigger tooltip="Expiration"></i> <i class="fa fa-sort"></i></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="stash in filtered | buildStashes | orderBy:predicate:reverse | limitTo:filters.limit track by stash._id">
+                <td ng-if="!user.isReadOnly()">
+                  <input type="checkbox" ng-model="selected.ids[stash._id]"></input>
+                </td>
+                <td class="main"><span ng-if="!user.isReadOnly()"><i class="fa fa-times" ng-click="deleteStash(stash._id);"></i></span>{{ stash.client }}</td>
+                <td>{{ stash.check }}</td>
+                <td>{{ stash.type }}</td>
+                <td ng-bind-html="stash.content.reason | linky"></td>
+                <td>{{ stash.content.source }}</td>
+                <td>{{ stash.content.username }}</td>
+                <td class="dc">{{ stash.dc }}</td>
+                <td>
+                  <relative-time timestamp="stash.content.timestamp"></relative-time>
+                </td>
+                <td>{{ stash | getExpireTimestamp }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

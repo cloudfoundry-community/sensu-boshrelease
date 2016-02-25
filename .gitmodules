@@ -1,0 +1,3 @@
+[submodule "src/rabbitmq-upgrade-preparation"]
+	path = src/rabbitmq-upgrade-preparation
+	url = https://github.com/pivotal-cf/rabbitmq-upgrade-preparation.git

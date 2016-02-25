@@ -1,0 +1,62 @@
+---
+name: rabbitmq-server
+packages:
+- util-linux # needed for setsid
+- erlang
+- rabbitmq-server
+- rabbitmq-cluster-migration-tool
+- rabbitmq-upgrade-preparation
+- syslog_aggregator
+
+properties:
+  rabbitmq-server.ssl.cacert:
+    description: "RabbitMQ server CA certificate"
+  rabbitmq-server.ssl.cert:
+    description: "RabbitMQ server certificate"
+  rabbitmq-server.ssl.key:
+    description: "RabbitMQ server private key"
+  rabbitmq-server.ssl.security_options:
+    description: "SSL security options (currently only 'enable_tls1_0')"
+    default: []
+
+  rabbitmq-server.plugins:
+    description: "RabbitMQ plugins (array of strings)"
+
+  rabbitmq-server.administrators.broker.username:
+    description: "RabbitMQ admin username for broker"
+  rabbitmq-server.administrators.broker.password:
+    description: "RabbitMQ admin password for broker"
+  rabbitmq-server.administrators.management.username:
+    description: "RabbitMQ admin username for operator"
+  rabbitmq-server.administrators.management.password:
+    description: "RabbitMQ admin password for operator"
+
+  rabbitmq-server.config:
+    description: "RabbitMQ configuration (base64 encoded)"
+
+  rabbitmq-server.cookie:
+    description: "Erlang cookie used by RabbitMQ nodes and rabbitmqctl"
+
+  rabbitmq-server.static_ips:
+    description: "Cluster node IPs"
+
+  rabbitmq-server.fd_limit:
+    description: "The file descriptor limit for the RabbitMQ process"
+    default: 300000
+
+  syslog_aggregator.address:
+    description: "Syslog drain hostname"
+  syslog_aggregator.port:
+    description: "Syslog drain port"
+
+templates:
+  plugins.sh.erb:                   bin/plugins.sh
+  rabbitmq-server.init.erb:         bin/rabbitmq-server.init
+  setup.sh.erb:                     bin/setup.sh
+  node_name_migration.sh:           bin/node_name_migration.sh
+  rabbitmq.config.erb:              etc/rabbitmq.config
+  cacert.pem.erb:                   etc/cacert.pem
+  cert.pem.erb:                     etc/cert.pem
+  key.pem.erb:                      etc/key.pem
+  syslog_forwarder.conf.erb:        config/syslog_forwarder.conf
+  rabbitmq_syslog.conf.erb:         config/rabbitmq_syslog.conf

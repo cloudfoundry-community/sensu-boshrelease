@@ -16,6 +16,11 @@ jobs:
     networks:
       - name: sensu1
 
+  - name: rabbitmq_server
+    networks:
+      - name: sensu1
+        static_ips: (( static_ips(0,1,2,3) ))
+
 compilation:
   cloud_properties:
     name: random

@@ -18,6 +18,26 @@ jobs:
     resource_pool: small_z1
     networks: (( param "please set just_install_package networks" ))
 
+  - name: rabbitmq_server
+    templates:
+    - name: rabbitmq-server
+      release: sensu
+    instances: 1
+    persistent_disk: 4096
+    resource_pool: small_z1
+    networks: (( param "please set rabbitmq-server networks" ))
+
+
 networks: (( param "please set networks" ))
 
-properties: {}
+properties:
+  rabbitmq-server:
+    plugins:
+    - rabbitmq_management
+    - rabbitmq_mqtt
+    - rabbitmq_stomp
+    administrators:
+      broker:
+        username: username
+        password: password
+    static_ips: (( grab jobs.rabbitmq_server.networks.sensu1.static_ips ))
